@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: url('../images/bone-cursor.png'), auto;
+}
+
+img {
+  font-size: 0.5rem;
+}
+
+.container {
+  max-width: 1200px !important;
+}

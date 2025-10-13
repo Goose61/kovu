@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#25272D] overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KOVU | $KOVU on Bonk</title>
+    <meta
+      name="description"
+      content="Meet KOVU - The viral sensation taking over Bonk! Join the community and ride the wave! 🚀"
+    />
+    <meta
+      property="og:image"
+      content="https://kovu.fun/assets/images/og-image.png"
+    />
+    <meta property="og:site_name" content="$KOVU" />
+
+    <!-- External assets -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Titan One and Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Spline -->
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.1.1/build/spline-viewer.js"
+    ></script>
+  </head>
+
+  <body class="text-white font-titan-one overflow-x-hidden">
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed top-0 left-0 w-full h-full bg-[#25272D] grid place-items-center z-50 transition-all"
+    >
+      <div class="absolute top-0 right-0">
+        <img src="./assets/images/right-paw.svg" alt="" class="w-24 sm:w-32" />
+      </div>
+      <div class="absolute bottom-8 left-0">
+        <img src="./assets/images/left-paw.svg" alt="" class="w-24 sm:w-32" />
+      </div>
+
+      <div class="grid gap-8 place-items-center">
+        <img
+          src="./assets/images/dogatoshi-icon.png"
+          alt=""
+          class="w-32 lg:w-44 animate-bounce"
+        />
+        <div class="text-center grid gap-4">
+          <p class="text-2xl sm:text-3xl animate-pulse text-yellow-500">
+            Loading...
+          </p>
+          <p class="sm:text-2xl text-neutral-400">
+            🚀 Get ready to go viral with KOVU! 🔥
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+      class="bg-[#1F2123] fixed top-0 w-full z-40 font-inter text-sm border-b border-white/10 lg:border-0 lg:shadow-lg"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between gap-8 px-4 py-6 sm:px-8 lg:py-4"
+      >
+        <a href="#" title="KOVU">
+          <img
+            src="./assets/images/nav-image.svg"
+            alt="KOVU logo"
+            class="w-52 lg:w-36 hidden sm:block"
+          />
+          <img
+            src="./assets/images/dogatoshi-icon.png"
+            alt="KOVU logo"
+            class="w-24 sm:hidden"
+          />
+        </a>
+
+        <ul class="gap-8 font-bold hidden lg:flex">
+          <li>
+            <a
+              href="#hero"
+              title="Home"
+              class="hover:text-yellow-500 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              title="About"
+              class="hover:text-yellow-500 transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tokenomics"
+              title="Tokenomics"
+              class="hover:text-yellow-500 transition-colors"
+              >Tokenomics</a
+            >
+          </li>
+          <li>
+            <a
+              href="#buy-kovu"
+              title="Buy $KOVU"
+              class="hover:text-yellow-500 transition-colors"
+              >Buy $KOVU</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tiktok"
+              title="TikTok"
+              class="hover:text-yellow-500 transition-colors"
+              >TikTok</a
+            >
+          </li>
+          <li>
+            <a
+              href="#community"
+              title="Community"
+              class="hover:text-yellow-500 transition-colors"
+              >Community</a
+            >
+          </li>
+        </ul>
+
+        <div>
+          <button type="button" id="menu-button">
+            <img
+              src="./assets/images/menu-icon.svg"
+              alt="menu icon"
+              class="w-24 lg:hidden"
+            />
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Navbar -->
+    <div
+      id="mobile-navbar"
+      class="fixed grid place-items-center top-0 left-0 w-full h-full bg-[#1F2123]/95 backdrop-blur z-50 transform -translate-y-full overflow-y-auto transition-transform duration-300 ease-in-out"
+    >
+      <button
+        id="close-button"
+        type="button"
+        class="absolute top-8 right-8 text-4xl"
+      >
+        X
+      </button>
+      <ul
+        class="flex flex-col gap-12 p-8 text-center text-3xl font-inter font-semibold"
+      >
+        <li>
+          <a
+            href="#hero"
+            title="Home"
+            class="hover:text-yellow-500 transition-colors"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            title="About"
+            class="hover:text-yellow-500 transition-colors"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#tokenomics"
+            title="Tokenomics"
+            class="hover:text-yellow-500 transition-colors"
+            >Tokenomics</a
+          >
+        </li>
+        <li>
+          <a
+            href="#buy-kovu"
+            title="Buy $KOVU"
+            class="hover:text-yellow-500 transition-colors"
+            >Buy $KOVU</a
+          >
+        </li>
+        <li>
+          <a
+            href="#tiktok"
+            title="TikTok"
+            class="hover:text-yellow-500 transition-colors"
+            >TikTok</a
+          >
+        </li>
+        <li>
+          <a
+            href="#community"
+            title="Community"
+            class="hover:text-yellow-500 transition-colors"
+            >Community</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="bg-hero-pattern bg-cover min-h-screen grid place-items-center relative pt-32 md:pt-0"
+    >
+      <div
+        class="absolute bottom-0 w-full h-10 bg-gradient-to-t from-[#25272D] to-transparent"
+      ></div>
+
+      <div
+        class="container mx-auto flex flex-col-reverse items-center justify-evenly md:flex-row gap-8 px-8"
+      >
+        <div
+          class="max-w-72 z-10 flex-1"
+          data-aos="zoom-out"
+          data-aos-delay="1500"
+        >
+          <h1 class="text-7xl lg:text-8xl uppercase whitespace-nowrap">
+            <span class="text-yellow-500">$KOVU</span>
+          </h1>
+
+          <p class="mt-4 font-inter text-lg pl-2 sm:pl-4">
+            The viral sensation taking over Bonk! Join the movement and experience the hype! 🚀
+          </p>
+
+          <a
+            href="https://bonk.fun/token/FpNfZWF5RfiKuR4ZmBsBFN9wR4XsjB9HR7vUwCf2bonk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block py-8 hover:scale-105 transition-all ease-in-out transform active:scale-95 focus:outline-none focus:scale-105 w-full"
+          >
+            <img
+              src="./assets/images/bone-button.svg"
+              alt="Buy KOVU"
+              class="w-60 mx-auto"
+            />
+          </a>
+
+          <div class="flex gap-4 items-center p-4 justify-center">
+            <a
+              href="https://t.me/kovusolana"
+              title="Telegram"
+              class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/images/telegram-icon.svg"
+                alt="Telegram"
+                class="w-8"
+              />
+            </a>
+            <a
+              href="https://x.com/kovuonbonk"
+              title="Twitter"
+              class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/images/twitter-icon.svg"
+                alt="Twitter"
+                class="w-8"
+              />
+            </a>
+            <a
+              href="https://www.tiktok.com/@kovubp"
+              title="TikTok"
+              class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="flex-1 pt-20 pb-10 md:hidden"
+          data-aos="zoom-out"
+          data-aos-delay="1500"
+        >
+          <img
+            src="./assets/images/hero-image.png"
+            alt="KOVU character"
+            class="max-w-full w-full ml-auto"
+            data-aos="fade-down"
+          />
+        </div>
+
+        <div class="hidden md:block flex-1" data-aos="zoom-out" data-aos-delay="1500">
+          <div class="scale-150 md:scale-125 lg:scale-150 xl:scale-[1.85] md:translate-x-0 xl:translate-x-1/4">
+            <spline-viewer
+              loading-anim-type="spinner-big-light"
+              url="https://prod.spline.design/zTQrZsO226WCeJY4/scene.splinecode"
+            ></spline-viewer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About KOVU -->
+    <section id="about" class="bg-features-bg-pattern bg-cover">
+      <div class="container mx-auto px-4 sm:px-8 py-20 lg:py-32 grid gap-10">
+        <div class="text-center grid gap-2" data-aos="zoom-out">
+          <h2 class="text-yellow-500 text-4xl sm:text-5xl uppercase">
+            Meet $KOVU
+          </h2>
+          <p class="text-xl sm:text-2xl">
+            The viral sensation that's taking over Bonk! Built on pure hype and community energy! 🚀🔥
+          </p>
+        </div>
+
+        <div
+          class="flex flex-wrap justify-center gap-8 flex-col sm:flex-row"
+          data-aos="zoom-out"
+        >
+          <div class="flex-1 w-4/5 mx-auto sm:max-w-xs">
+            <div class="flex flex-col gap-2 p-4">
+              <img
+                src="./assets/images/bone.png"
+                alt="Icon"
+                class="w-28 sm:w-32 mx-auto pb-4"
+              />
+              <h3 class="text-yellow-500 text-2xl sm:text-3xl uppercase">
+                1. Viral <span class="text-white">Energy</span>
+              </h3>
+              <p class="font-inter sm:text-lg">
+                KOVU is the meme coin that's spreading like wildfire across social media.
+                From TikTok to Twitter, everyone's talking about $KOVU!
+              </p>
+            </div>
+          </div>
+          <div class="flex-1 w-4/5 mx-auto sm:max-w-xs">
+            <div class="flex flex-col gap-2 p-4">
+              <img
+                src="./assets/images/dog-paw.png"
+                alt="Icon"
+                class="w-28 sm:w-32 mx-auto pb-4"
+              />
+              <h3 class="text-yellow-500 text-2xl sm:text-3xl uppercase">
+                2. Community <span class="text-white">First</span>
+              </h3>
+              <p class="font-inter sm:text-lg">
+                Built by the people, for the people. Our community is what makes
+                $KOVU unstoppable. Join the movement!
+              </p>
+            </div>
+          </div>
+          <div class="flex-1 w-4/5 mx-auto sm:max-w-xs">
+            <div class="flex flex-col gap-2 p-4">
+              <img
+                src="./assets/images/dog.png"
+                alt="Icon"
+                class="w-28 sm:w-32 mx-auto pb-4"
+              />
+              <h3 class="text-yellow-500 text-2xl sm:text-3xl uppercase">
+                3. Pure <span class="text-white">Hype</span>
+              </h3>
+              <p class="font-inter text-lg">
+                No complicated tech jargon. Just pure meme energy and hype.
+                KOVU is here to make waves and take names!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto text-center pt-10" data-aos="zoom-out">
+          <p class="font-inter text-lg sm:text-xl text-yellow-500 font-bold mb-4">
+            Contract Address (CA):
+          </p>
+          <p class="font-mono text-sm sm:text-base bg-[#1F2123] p-4 rounded-lg break-all">
+            FpNfZWF5RfiKuR4ZmBsBFN9wR4XsjB9HR7vUwCf2bonk
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KOVU Tokenomics -->
+    <section
+      id="tokenomics"
+      class="bg-gradient-pattern bg-cover uppercase py-20 relative"
+    >
+      <div
+        class="absolute bottom-0 w-full h-10 bg-gradient-to-t from-[#25272D] to-transparent"
+      ></div>
+
+      <div class="absolute right-0 bottom-4 hidden md:block">
+        <img src="./assets/images/right-paw.svg" alt="" />
+      </div>
+      <div class="absolute left-0 bottom-4 hidden md:block">
+        <img src="./assets/images/left-paw.svg" alt="" />
+      </div>
+
+      <div
+        class="container mx-auto flex flex-col-reverse items-center lg:items-end xl:items-center justify-center xl:justify-start lg:flex-row gap-2 xsm:px-8 xl:px-0"
+        data-aos="zoom-out"
+      >
+        <div class="grid gap-10 z-10 px-8 xsm:px-0">
+          <h3
+            class="text-5xl text-yellow-500 hidden sm:block xl:whitespace-nowrap"
+          >
+            $KOVU Tokenomics
+          </h3>
+
+          <div class="grid gap-1">
+            <h4 class="text-2xl sm:text-3xl text-yellow-500">🚀 SUPPLY 🚀</h4>
+            <ul class="text-xl sm:text-2xl">
+              <li>TOTAL SUPPLY: 1 BILLION</li>
+              <li>100% COMMUNITY OWNED</li>
+              <li>NO TEAM TOKENS</li>
+              <li>FAIR LAUNCH ON BONK</li>
+            </ul>
+          </div>
+
+          <div class="grid gap-1">
+            <h4 class="text-2xl sm:text-3xl text-yellow-500">
+              💰 DISTRIBUTION 💰
+            </h4>
+            <ul class="text-xl sm:text-2xl">
+              <li>95% LIQUIDITY POOL</li>
+              <li>5% MARKETING & GROWTH</li>
+              <li>RENOUNCED CONTRACT</li>
+            </ul>
+          </div>
+
+          <div class="grid gap-1">
+            <h4 class="text-2xl sm:text-3xl text-yellow-500">
+              🔥 BUILT DIFFERENT 🔥
+            </h4>
+            <p class="capitalize text-xl sm:text-2xl">
+              Community-driven, meme-powered, and ready to take over! No tax, no BS, just pure viral energy!
+            </p>
+          </div>
+        </div>
+
+        <div class="w-full">
+          <img
+            src="./assets/images/dog-statue-w-paws.png"
+            alt="KOVU character"
+            class="max-w-full lg:max-w-none lg:w-[768px] xl:w-[912px] lg:-ml-40 xl:-ml-64"
+          />
+        </div>
+
+        <h3
+          class="text-4xl text-yellow-500 sm:hidden text-center px-8 xsm:px-0"
+        >
+          $KOVU Tokenomics
+        </h3>
+      </div>
+    </section>
+
+    <!-- How to Buy $KOVU -->
+    <section id="buy-kovu" class="bg-features-bg-pattern bg-cover">
+      <div class="container mx-auto px-4 sm:px-8 py-20 grid gap-16">
+        <div class="text-center grid gap-4" data-aos="zoom-out">
+          <h2 class="text-yellow-500 text-4xl sm:text-5xl uppercase">
+            How to buy $KOVU
+          </h2>
+          <p class="max-w-xl mx-auto text-xl sm:text-2xl">
+            Join the viral sensation! Buying $KOVU on Bonk is super easy.
+            Follow these simple steps and become part of the movement! 🚀
+          </p>
+        </div>
+
+        <div class="grid gap-4">
+          <div
+            class="flex flex-wrap justify-center gap-4 flex-col sm:flex-row"
+            data-aos="zoom-out"
+          >
+            <div class="flex-1 w-full">
+              <div class="flex flex-col gap-2 p-4">
+                <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                  1. Get a Solana Wallet
+                </h3>
+                <p class="font-inter text-lg sm:text-xl">
+                  Download Phantom Wallet or any Solana-compatible wallet from
+                  the App Store, Google Play, or as a browser extension.
+                  Create your account and secure your seed phrase!
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 w-full">
+              <div class="flex flex-col gap-2 p-4">
+                <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                  2. Load up on SOL
+                </h3>
+                <p class="font-inter text-lg sm:text-xl">
+                  You'll need some SOL to buy $KOVU. Get SOL from an exchange
+                  like Coinbase or directly in your Phantom wallet, then send
+                  it to your wallet address.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-wrap justify-center gap-4 flex-col sm:flex-row"
+            data-aos="zoom-out"
+          >
+            <div class="flex-1 w-full">
+              <div class="flex flex-col gap-2 p-4">
+                <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                  3. Head to Bonk
+                </h3>
+                <p class="font-inter text-lg sm:text-xl">
+                  Visit bonk.fun and connect your wallet. Search for $KOVU
+                  using the contract address or find it on the trending page.
+                  The community is already there!
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 w-full">
+              <div class="flex flex-col gap-2 p-4">
+                <h3 class="text-yellow-500 text-3xl sm:text-4xl uppercase">
+                  4. Swap SOL for $KOVU
+                </h3>
+                <p class="font-inter text-lg sm:text-xl">
+                  Enter the amount of SOL you want to swap, review the transaction,
+                  and confirm! Congratulations, you're now part of the $KOVU movement!
+                  LFG! 🔥
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8" data-aos="zoom-out">
+          <a
+            href="https://bonk.fun/token/FpNfZWF5RfiKuR4ZmBsBFN9wR4XsjB9HR7vUwCf2bonk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-yellow-500 text-black font-bold text-xl px-12 py-4 rounded-full hover:scale-105 transition-transform uppercase"
+          >
+            Buy $KOVU Now on Bonk
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TikTok Viral Videos -->
+    <section id="tiktok" class="bg-features-bg-pattern bg-cover">
+      <div class="container mx-auto px-4 sm:px-8 py-20 grid gap-16">
+        <div class="text-center grid gap-4" data-aos="zoom-out">
+          <h2 class="text-yellow-500 text-4xl sm:text-5xl uppercase">
+            🔥 KOVU Going Viral 🔥
+          </h2>
+          <p class="text-xl sm:text-2xl max-w-2xl mx-auto">
+            Watch the most popular $KOVU videos taking over TikTok!
+            Join millions who are already part of the movement!
+          </p>
+          <a
+            href="https://www.tiktok.com/@kovubp"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-yellow-500 hover:text-yellow-400 transition-colors font-bold text-lg"
+          >
+            Follow @kovubp on TikTok →
+          </a>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center" data-aos="zoom-out">
+          <!-- TikTok Embed 1 -->
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@kovubp/video/7347873459755568426" data-video-id="7347873459755568426" style="max-width: 605px;min-width: 325px;">
+            <section>
+              <a target="_blank" title="@kovubp" href="https://www.tiktok.com/@kovubp?refer=embed">@kovubp</a>
+            </section>
+          </blockquote>
+
+          <!-- TikTok Embed 2 -->
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@kovubp/video/7457176112989228330" data-video-id="7457176112989228330" style="max-width: 605px;min-width: 325px;">
+            <section>
+              <a target="_blank" title="@kovubp" href="https://www.tiktok.com/@kovubp?refer=embed">@kovubp</a>
+            </section>
+          </blockquote>
+
+          <!-- TikTok Embed 3 -->
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@kovubp/video/7346406386181459243" data-video-id="7346406386181459243" style="max-width: 605px;min-width: 325px;">
+            <section>
+              <a target="_blank" title="@kovubp" href="https://www.tiktok.com/@kovubp?refer=embed">@kovubp</a>
+            </section>
+          </blockquote>
+        </div>
+
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </section>
+
+    <!-- Community & Why KOVU -->
+    <section
+      id="community"
+      class="bg-features-bg-pattern bg-cover font-inter text-lg"
+    >
+      <div class="container mx-auto px-4 sm:px-8 py-20 grid gap-16">
+        <h2
+          class="text-center text-yellow-500 text-4xl sm:text-5xl uppercase font-titan-one"
+          data-aos="zoom-out"
+        >
+          Why $KOVU is Different
+        </h2>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-aos="zoom-out">
+          <div class="flex gap-4 p-4 bg-[#1F2123] rounded-lg">
+            <img
+              src="./assets/images/dog-paw-yellow-fill.png"
+              alt=""
+              class="object-contain w-12 sm:w-16"
+            />
+            <div>
+              <h3 class="text-yellow-500 font-bold text-xl mb-2">Viral by Nature</h3>
+              <p class="text-sm sm:text-base">
+                KOVU isn't just a coin—it's a movement. With millions of views on TikTok
+                and a rapidly growing community, we're spreading like wildfire!
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-4 bg-[#1F2123] rounded-lg">
+            <img
+              src="./assets/images/dog-paw-yellow-fill.png"
+              alt=""
+              class="object-contain w-12 sm:w-16"
+            />
+            <div>
+              <h3 class="text-yellow-500 font-bold text-xl mb-2">Community Driven</h3>
+              <p class="text-sm sm:text-base">
+                Built by the people, for the people. No VCs, no team allocation.
+                Just pure community power driving $KOVU to the moon!
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-4 bg-[#1F2123] rounded-lg">
+            <img
+              src="./assets/images/dog-paw-yellow-fill.png"
+              alt=""
+              class="object-contain w-12 sm:w-16"
+            />
+            <div>
+              <h3 class="text-yellow-500 font-bold text-xl mb-2">Pure Hype Energy</h3>
+              <p class="text-sm sm:text-base">
+                We're riding the wave of social media virality. When everyone's
+                talking about KOVU, you know something special is happening!
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-4 bg-[#1F2123] rounded-lg">
+            <img
+              src="./assets/images/dog-paw-yellow-fill.png"
+              alt=""
+              class="object-contain w-12 sm:w-16"
+            />
+            <div>
+              <h3 class="text-yellow-500 font-bold text-xl mb-2">Fair Launch</h3>
+              <p class="text-sm sm:text-base">
+                Launched fairly on Bonk with no pre-sale, no whitelist.
+                Everyone had an equal opportunity from day one!
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-4 bg-[#1F2123] rounded-lg">
+            <img
+              src="./assets/images/dog-paw-yellow-fill.png"
+              alt=""
+              class="object-contain w-12 sm:w-16"
+            />
+            <div>
+              <h3 class="text-yellow-500 font-bold text-xl mb-2">Transparent</h3>
+              <p class="text-sm sm:text-base">
+                Renounced contract, liquidity locked. We're here for the long haul,
+                building trust one holder at a time.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-4 bg-[#1F2123] rounded-lg">
+            <img
+              src="./assets/images/dog-paw-yellow-fill.png"
+              alt=""
+              class="object-contain w-12 sm:w-16"
+            />
+            <div>
+              <h3 class="text-yellow-500 font-bold text-xl mb-2">Based Community</h3>
+              <p class="text-sm sm:text-base">
+                Join our Telegram and Twitter to connect with thousands of holders.
+                We're not just investors—we're a family!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-footer-bg-pattern bg-center bg-cover relative">
+      <div class="absolute top-4 right-4">
+        <img src="./assets/images/stripes.svg" alt="" />
+      </div>
+
+      <div class="grid gap-8 py-16 px-4 text-center" data-aos="fade-in">
+        <h2 class="text-5xl sm:text-6xl text-black">JOIN THE $KOVU MOVEMENT</h2>
+        <div class="flex gap-4 justify-center items-center">
+          <a
+            href="https://t.me/kovusolana"
+            title="Telegram"
+            class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/telegram-icon.svg"
+              alt="Telegram"
+              class="w-8"
+            />
+          </a>
+          <a
+            href="https://x.com/kovuonbonk"
+            title="Twitter/X"
+            class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="./assets/images/twitter-icon.svg"
+              alt="Twitter"
+              class="w-8"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com/@kovubp"
+            title="TikTok"
+            class="hover:scale-110 transition-all ease-in-out transform bg-yellow-500 w-12 h-12 rounded-full grid place-items-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="font-inter text-xs grid gap-1">
+          <p class="text-black">© 2025 $KOVU. All rights reserved. Powered by Bonk.</p>
+          <p class="max-w-sm mx-auto text-black/70 px-2">
+            This meme coin is made purely for entertainment purposes and does
+            not guarantee any financial returns. Always DYOR. Invest at your own risk.
+          </p>
+          <p class="max-w-sm mx-auto text-black/50 px-2 mt-2">
+            Made with ❤️ by Gustav Eigenhuis
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
