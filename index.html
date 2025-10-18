@@ -53,11 +53,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Spline -->
-    <script
-      type="module"
-      src="https://unpkg.com/@splinetool/viewer@1.1.1/build/spline-viewer.js"
-    ></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="./assets/js/three-model.js" defer></script>
   </head>
 
   <body class="text-white font-titan-one overflow-x-hidden">
@@ -332,12 +331,7 @@
         </div>
 
         <div class="hidden md:block flex-1" data-aos="zoom-out" data-aos-delay="1500">
-          <div class="scale-150 md:scale-125 lg:scale-150 xl:scale-[1.85] md:translate-x-0 xl:translate-x-1/4">
-            <spline-viewer
-              loading-anim-type="spinner-big-light"
-              url="https://prod.spline.design/zTQrZsO226WCeJY4/scene.splinecode"
-            ></spline-viewer>
-          </div>
+          <div id="three-container" class="w-full h-[500px] md:h-[600px] lg:h-[700px]"></div>
         </div>
       </div>
     </section>
