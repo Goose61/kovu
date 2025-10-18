@@ -54,9 +54,9 @@ function initThreeJS() {
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
 
-      // Scale model to fit view (2x larger)
+      // Scale model to fit view
       const maxDim = Math.max(size.x, size.y, size.z);
-      const scale = 5.0 / maxDim;
+      const scale = 4.0 / maxDim;
       model.scale.set(scale, scale, scale);
 
       // Center the model
