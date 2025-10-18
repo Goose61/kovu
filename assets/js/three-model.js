@@ -54,9 +54,9 @@ function initThreeJS() {
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
 
-      // Scale model to fit view
+      // Scale model to fit view (2x larger)
       const maxDim = Math.max(size.x, size.y, size.z);
-      const scale = 2.5 / maxDim;
+      const scale = 5.0 / maxDim;
       model.scale.set(scale, scale, scale);
 
       // Center the model
@@ -97,11 +97,11 @@ function onMouseMove(event) {
 
   // Normalize mouse position to -1 to 1 range
   mousePos.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-  mousePos.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  mousePos.y = ((event.clientY - rect.top) / rect.height) * 2 - 1;
 
   // Convert to rotation angles (in radians)
   targetRotation.y = mousePos.x * 0.5; // Horizontal rotation
-  targetRotation.x = -mousePos.y * 0.3; // Vertical rotation (inverted)
+  targetRotation.x = mousePos.y * 0.3; // Vertical rotation
 }
 
 function onTouchMove(event) {
@@ -111,10 +111,10 @@ function onTouchMove(event) {
     const touch = event.touches[0];
 
     mousePos.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
-    mousePos.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+    mousePos.y = ((touch.clientY - rect.top) / rect.height) * 2 - 1;
 
     targetRotation.y = mousePos.x * 0.5;
-    targetRotation.x = -mousePos.y * 0.3;
+    targetRotation.x = mousePos.y * 0.3;
   }
 }
 
