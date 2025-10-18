@@ -101,7 +101,7 @@ function onMouseMove(event) {
 
   // Convert to rotation angles (in radians)
   targetRotation.y = mousePos.x * 0.5; // Horizontal rotation
-  targetRotation.x = mousePos.y * 0.3; // Vertical rotation
+  targetRotation.x = -mousePos.y * 0.3; // Vertical rotation (inverted)
 }
 
 function onTouchMove(event) {
@@ -114,7 +114,7 @@ function onTouchMove(event) {
     mousePos.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
 
     targetRotation.y = mousePos.x * 0.5;
-    targetRotation.x = mousePos.y * 0.3;
+    targetRotation.x = -mousePos.y * 0.3;
   }
 }
 
